@@ -24,7 +24,7 @@ jobs:
               - 'default.json'
 
             workflow:
-              - '.github/workflow/*'
+              - '.github/workflow/**/*.yml'
 
             yaml:
               - '**/*.yaml'

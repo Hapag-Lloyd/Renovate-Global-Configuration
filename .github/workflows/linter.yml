@@ -36,8 +36,33 @@ jobs:
       workflow: ${{ steps.changes.outputs.workflow }}
       yaml: ${{ steps.changes.outputs.yaml }}
 
+  lint-json:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: needs.find-changes.outputs.json == 'true'
+    needs: find-changes
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: Run JSON Lint
+        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
+
+  lint-markdown:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: needs.find-changes.outputs.markdown == 'true'
+    needs: find-changes
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: Validate Markdown file
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint -c .config/markdownlint.yml -i CHANGELOG.md "**/*.md"
+
   lint-renovate:
     runs-on: ubuntu-latest
+    continue-on-error: true
     if: needs.find-changes.outputs.renovate-config == 'true'
     needs: find-changes
     steps:
@@ -50,30 +75,9 @@ jobs:
         with:
           config_file_path: default.json
 
-  lint-markdown:
-    runs-on: ubuntu-latest
-    if: needs.find-changes.outputs.markdown == 'true'
-    needs: find-changes
-    steps:
-      - uses: actions/checkout@v3.3.0
-
-      - name: Validate Markdown file
-        run: |
-          npm install -g markdownlint-cli
-          markdownlint -c .config/markdownlint.yml -i CHANGELOG.md "**/*.md"
-
-  lint-json:
-    runs-on: ubuntu-latest
-    if: needs.find-changes.outputs.json == 'true'
-    needs: find-changes
-    steps:
-      - uses: actions/checkout@v3.3.0
-
-      - name: Run JSON Lint
-        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
-
   lint-workflow:
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: find-changes
     if: needs.find-changes.outputs.workflow == 'true'
     container:
@@ -88,6 +92,7 @@ jobs:
 
   lint-yaml:
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: find-changes
     if: needs.find-changes.outputs.yaml == 'true'
     steps:

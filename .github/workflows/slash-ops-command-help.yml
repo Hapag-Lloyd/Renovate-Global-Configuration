@@ -24,13 +24,13 @@ jobs:
       - name: Create comment
         uses: actions/github-script@v6.4.0
         with:
+          # yamllint disable rule:line-length
           script: |
             // adds a comment to the PR (there is the issue API, which works work PRs too)
-            // yamllint disable rule:line-length
             github.rest.issues.createComment({
               issue_number: context.payload.client_payload.github.payload.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: 'Hey there ${{ steps.vars.outputs.maintainer }}, could you please help @${{ github.event.client_payload.github.payload.comment.user.login }} out?'
             })
-            // yamllint enable rule:line-length
+          # yamllint enable rule:line-length

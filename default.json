@@ -1,6 +1,6 @@
 {
   "autodiscover": true,
-  "autodiscoverFilter": ["/Hapag-Lloyd/*/"]
+  "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
   "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
   "includeForks": false,
   "ignorePaths": ["**/modules/**/provider.tf"],
@@ -23,7 +23,7 @@
     {
       "matchDatasources": ["repology"],
       "separateMajorMinor": false,
-      "groupName": "repology packages",
+      "groupName": "repology packages"
     }
   ],
 

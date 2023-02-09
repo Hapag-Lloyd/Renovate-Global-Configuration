@@ -1,3 +1,3 @@
 {
-  "extends": ["github>Hapag-Lloyd/test"],
+  "extends": ["github>Hapag-Lloyd/Renovate-Global-Configuration"],
 }

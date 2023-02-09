@@ -23,18 +23,23 @@ jobs:
 
             workflow:
               - '.github/workflow/*'
+            
+            yaml:
+              - '**/*.yaml'
+              - '**/*.yml'
     outputs:
       json: ${{ steps.changes.outputs.json }}
       markdown: ${{ steps.changes.outputs.markdown }}
       renovate-config: ${{ steps.changes.outputs.renovate-config }}
       workflow: ${{ steps.changes.outputs.workflow }}
+      yaml: ${{ steps.changes.outputs.yaml }}
 
   lint-renovate:
     runs-on: ubuntu-latest
     if: needs.find-changes.outputs.renovate-config == 'true'
     needs: find-changes
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.3.0
 
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
 
@@ -48,7 +53,7 @@ jobs:
     if: needs.find-changes.outputs.markdown == 'true'
     needs: find-changes
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.3.0
 
       - name: Validate Markdown file
         run: |
@@ -60,7 +65,7 @@ jobs:
     if: needs.find-changes.outputs.json == 'true'
     needs: find-changes
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.3.0
 
       - name: Run JSON Lint
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
@@ -72,8 +77,16 @@ jobs:
       image: rhysd/actionlint:1.6.22
       options: --cpus 1 --user root
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.3.0
       - name: Validate Github workflows
         run: |
           mkdir .git
           actionlint -color
+
+  lint-yaml:
+    runs-on: ubuntu-latest
+    if: needs.find-changes.outputs.yaml == 'true'
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3.1.1

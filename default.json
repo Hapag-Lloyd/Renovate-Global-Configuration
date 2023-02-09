@@ -1,0 +1,42 @@
+{
+  "autodiscover": true,
+  "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
+  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
+  "includeForks": false,
+  "ignorePaths": ["**/modules/**/provider.tf"],
+  "labels": ["dependency"],
+  "onboarding": false,
+  "platform": "github",
+  "platformAutomerge": true,
+  "rebaseWhen": "behind-base-branch",
+
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^software.amazon.*", "^com.amazonaws.*"],
+      "groupName": "AWS packages",
+      "schedule": ["before 11:59am on monday"]
+    },
+    {
+      "matchDatasources": ["repology"],
+      "separateMajorMinor": false,
+      "groupName": "repology packages"
+    }
+  ],
+
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile[^/]*$"
+      ],
+      "matchStrings": [
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s*"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
+}

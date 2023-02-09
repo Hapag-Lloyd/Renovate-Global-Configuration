@@ -22,4 +22,4 @@ We use [pre-commit](https://pre-commit.com/) for some default checks which are f
 ## License
 
 By contributing, you agree that your contributions will be licensed under the license available at
-[LICENSE](blob/main/LICENSE)
+[LICENSE](blob/main/LICENSE).

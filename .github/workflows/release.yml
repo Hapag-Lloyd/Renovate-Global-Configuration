@@ -1,0 +1,16 @@
+name: Create a release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release
+        uses: google-github-actions/release-please-action@v3.7.3
+        with:
+          release-type: simple
+          signoff: "Matthias Kay <matthias.kay@hlag.com>"

@@ -2,9 +2,14 @@
   "version": "0.2",
   "language": "en",
   "words": [
-    "datasource",
-    "Dockerfiles",
     "Hapag",
     "Repology"
+  ],
+  "ignoreWords": [
+    "CODEOWNERS",
+    "datasource",
+    "Dockerfiles",
+    "shuf",
+    "tflint"
   ]
 }

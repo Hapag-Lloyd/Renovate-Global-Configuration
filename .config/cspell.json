@@ -1,14 +1,12 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": [
-    "Hapag",
-    "Repology"
-  ],
+  "words": ["Hapag", "Repology"],
   "ignoreWords": [
     "CODEOWNERS",
     "datasource",
     "Dockerfiles",
+    "renovatebot",
     "shuf",
     "tflint"
   ]

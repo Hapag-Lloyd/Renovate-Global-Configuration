@@ -1,13 +1,19 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["Hapag", "Repology"],
+  "words": ["cpus", "Hapag", "Repology"],
   "ignoreWords": [
+    "amannn",
     "CODEOWNERS",
     "datasource",
     "Dockerfiles",
+    "dorny",
+    "ibiqlik",
+    "markdownlint",
     "renovatebot",
+    "rhysd",
     "shuf",
+    "shunsuke",
     "tflint"
   ]
 }

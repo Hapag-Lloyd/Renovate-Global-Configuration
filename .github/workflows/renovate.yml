@@ -16,3 +16,5 @@ jobs:
         with:
           configurationFile: default.json
           token: ${{ secrets.LINT_PR_GH_TOKEN }}
+        env:
+          RENOVATE_DRY_RUN: "full"

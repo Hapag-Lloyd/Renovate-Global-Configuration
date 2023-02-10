@@ -14,5 +14,5 @@ jobs:
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v34.82.0
         with:
-          configurationFile: default.js
+          configurationFile: default.json
           token: ${{ secrets.LINT_PR_GH_TOKEN }}

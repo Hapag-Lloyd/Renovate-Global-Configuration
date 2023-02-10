@@ -9,14 +9,14 @@ on:
       - edited
       - synchronize
     branches-ignore:
-      - 'release-please--branches--*'
+      - "release-please--branches--*"
 
 jobs:
   main:
     name: Validate PR title
     runs-on: ubuntu-latest
     steps:
-      - uses: amannn/action-semantic-pull-request@v5
+      - uses: amannn/action-semantic-pull-request@v5.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.LINT_PR_GH_TOKEN }}
         with:

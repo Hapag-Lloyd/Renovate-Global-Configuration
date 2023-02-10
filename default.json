@@ -31,10 +31,14 @@
     {
       "fileMatch": [
         "(^|/|\\.)Dockerfile$",
-        "(^|/)Dockerfile[^/]*$"
+        "(^|/)Dockerfile[^/]*$",
+        "(^|/)terraform\\.yml$",
+        "(^|/)tflint\\.hcl$"
       ],
       "matchStrings": [
-        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s*"
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*.+_version=\"(?<currentValue>.*)\"\\s*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*version = \"(?<currentValue>.*)\"\\s*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }

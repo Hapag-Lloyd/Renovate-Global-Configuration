@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/compare/v1.1.0...v1.2.0) (2023-02-10)
+
+
+### Features
+
+* allow Renovate to update versions in `tflint.hcl` and `terraform.yml` ([#14](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/issues/14)) ([bf41060](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/commit/bf4106091646ec09cfa22c27c28b7fa2ed7f9a31))
+
 ## [1.1.0](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/compare/v1.0.0...v1.1.0) (2023-02-10)
 
 

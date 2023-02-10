@@ -1,6 +1,17 @@
 # Renovate-Global-Configuration
 
-Global Renovate Configuration for Hapag-Lloyd repositories.
+This repository contains the global configuration settings useful for all Hapag-Lloyd repositories. Renovate is
+scheduled to run every 6 hours on all repositories we have.
+
+## Usage
+
+Make sure to include the default configuration in your `renovate.json` file.
+
+```json
+{
+  "extends": ["github>Hapag-Lloyd/Renovate-Global-Configuration"]
+}
+```
 
 ## Default Configuration
 

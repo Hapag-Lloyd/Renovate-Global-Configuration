@@ -1,7 +1,7 @@
 {
   "autodiscover": true,
   "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
-  "extends": ["config:base", ":semanticCommitTypeAll(chore)"],
+  "extends": ["config:base", ":semanticCommitTypeAll(chore)", "helpers:pinGitHubActionDigests"],
   "includeForks": false,
   "ignorePaths": ["**/modules/**/provider.tf"],
   "labels": ["dependency"],

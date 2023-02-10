@@ -4,8 +4,11 @@
   "words": ["cpus", "Hapag", "Repology"],
   "ignoreWords": [
     "amannn",
+    "autodiscover",
+    "Automerge",
     "CODEOWNERS",
     "datasource",
+    "datasources",
     "Dockerfiles",
     "dorny",
     "ibiqlik",

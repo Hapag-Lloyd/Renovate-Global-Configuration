@@ -4,6 +4,8 @@
   "words": ["cpus", "Hapag", "Infracost", "oidc", "Repology", "tflint", "tfsec"],
   "ignoreWords": [
     "amannn",
+    "autodiscover",
+    "Automerge",
     "codeowners",
     "codeql",
     "datasource",

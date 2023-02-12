@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:comments
-      - uses: dorny/paths-filter@v2.11.1
+      - uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
         id: changes
         with:
           filters: |
@@ -45,7 +45,7 @@ jobs:
     needs: find-changes
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       - name: Run JSON Lint
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
@@ -57,7 +57,7 @@ jobs:
     needs: find-changes
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       - name: Validate Markdown file
         run: |
@@ -71,14 +71,14 @@ jobs:
     needs: find-changes
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       # yamllint disable-line rule:comments
-      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@7ab3d8f19305664925f3e626580f075f14e40386 # v0.1.2
 
       # validates the default configuration included by all projects
       # yamllint disable-line rule:comments
-      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@7ab3d8f19305664925f3e626580f075f14e40386 # v0.1.2
         with:
           config_file_path: default.json
 
@@ -87,11 +87,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       - name: ShellCheck
         # yamllint disable-line rule:comments
-        uses: ludeeus/action-shellcheck@2.0.0
+        uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
 
   lint-workflow:
     runs-on: ubuntu-latest
@@ -103,7 +103,7 @@ jobs:
       options: --cpus 1 --user root
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       - name: Validate Github workflows
         run: |
@@ -117,11 +117,11 @@ jobs:
     if: needs.find-changes.outputs.yaml == 'true'
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       - name: yaml-lint
         # yamllint disable-line rule:comments
-        uses: ibiqlik/action-yamllint@v3.1.1
+        uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c # v3.1.1
         with:
           config_file: .config/yamllint.yml
           strict: true

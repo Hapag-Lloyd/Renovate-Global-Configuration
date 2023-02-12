@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
+        # yamllint disable-line rule:comments
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v34.82.0
+        # yamllint disable-line rule:comments
+        uses: renovatebot/github-action@8343fa1c8d38f3d030aa8332773b737f7e2fa591 # v34.82.0
         with:
           configurationFile: default.json
           token: ${{ secrets.RENOVATE_TOKEN }}

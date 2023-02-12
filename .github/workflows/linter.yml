@@ -76,6 +76,12 @@ jobs:
       # yamllint disable-line rule:comments
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
 
+      # validates the default configuration included by all projects
+      # yamllint disable-line rule:comments
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
+        with:
+          config_file_path: default.json
+
   lint-shell:
     name: Check shell scripts
     runs-on: ubuntu-latest
@@ -93,7 +99,7 @@ jobs:
     needs: find-changes
     if: needs.find-changes.outputs.workflow == 'true'
     container:
-      image: rhysd/actionlint:1.6.22@sha256:5f957b2a08d223e48133e1a914ed046bea12e578fe2f6ae4de47fdbe691a2468
+      image: rhysd/actionlint:1.6.23@sha256:02ccb6d91e4cb4a7b21eb99d5274d257e81ae667688d730e89d7ea0d6d35db91
       options: --cpus 1 --user root
     steps:
       # yamllint disable-line rule:comments

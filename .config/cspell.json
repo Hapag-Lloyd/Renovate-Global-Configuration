@@ -12,20 +12,26 @@
   ],
   "ignoreWords": [
     "amannn",
+    "autodiscover",
+    "automerge",
     "codeowners",
     "codeql",
     "datasource",
+    "datasources",
+    "Dockerfiles",
     "dorny",
     "ibiqlik",
     "kayman",
     "ludeeus",
     "markdownlint",
     "mktemp",
+    "renovatebot",
     "rhysd",
     "ruleset",
     "sarif",
     "shuf",
     "shunsuke",
-    "signoff"
+    "signoff",
+    "tflint"
   ]
 }

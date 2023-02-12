@@ -9,16 +9,20 @@
     "codeowners",
     "codeql",
     "datasource",
+    "datasources",
+    "Dockerfiles",
     "dorny",
     "ibiqlik",
     "kayman",
     "ludeeus",
     "markdownlint",
+    "renovatebot",
     "rhysd",
     "ruleset",
     "sarif",
     "shuf",
     "shunsuke",
-    "signoff"
+    "signoff",
+    "tflint"
   ]
 }

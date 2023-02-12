@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slash Command Dispatch
+        # yamllint disable-line rule:comments
         uses: peter-evans/slash-command-dispatch@v3.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -9,6 +9,7 @@ jobs:
   find-changes:
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:comments
       - uses: dorny/paths-filter@v2.11.1
         id: changes
         with:
@@ -43,6 +44,7 @@ jobs:
     if: needs.find-changes.outputs.json == 'true'
     needs: find-changes
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
 
       - name: Run JSON Lint
@@ -54,6 +56,7 @@ jobs:
     if: needs.find-changes.outputs.markdown == 'true'
     needs: find-changes
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
 
       - name: Validate Markdown file
@@ -67,11 +70,14 @@ jobs:
     if: needs.find-changes.outputs.renovate-config == 'true'
     needs: find-changes
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
 
+      # yamllint disable-line rule:comments
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
 
       # validates the default configuration included by all projects
+      # yamllint disable-line rule:comments
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
         with:
           config_file_path: default.json
@@ -80,9 +86,11 @@ jobs:
     name: Check shell scripts
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
 
       - name: ShellCheck
+        # yamllint disable-line rule:comments
         uses: ludeeus/action-shellcheck@2.0.0
 
   lint-workflow:
@@ -94,7 +102,9 @@ jobs:
       image: rhysd/actionlint:1.6.23@sha256:02ccb6d91e4cb4a7b21eb99d5274d257e81ae667688d730e89d7ea0d6d35db91
       options: --cpus 1 --user root
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
+
       - name: Validate Github workflows
         run: |
           mkdir .git
@@ -106,8 +116,11 @@ jobs:
     needs: find-changes
     if: needs.find-changes.outputs.yaml == 'true'
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
+
       - name: yaml-lint
+        # yamllint disable-line rule:comments
         uses: ibiqlik/action-yamllint@v3.1.1
         with:
           config_file: .config/yamllint.yml

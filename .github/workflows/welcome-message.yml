@@ -13,6 +13,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/github-script@v6.4.0
         with:
           # yamllint disable rule:line-length

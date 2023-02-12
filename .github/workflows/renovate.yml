@@ -3,8 +3,7 @@ name: Renovate
 
 # yamllint disable-line rule:truthy
 on:
-  schedule:
-    - cron: "37 0/6 * * *"
+  pull_request:
 
 jobs:
   renovate:
@@ -18,5 +17,7 @@ jobs:
         with:
           configurationFile: default.json
           token: ${{ secrets.RENOVATE_TOKEN }}
+          use_slim: false
         env:
           GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
+          LOG_LEVEL: debug

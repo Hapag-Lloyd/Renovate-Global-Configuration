@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/compare/v1.2.0...v1.3.0) (2023-02-12)
+
+
+### Features
+
+* enable Renovate dependency dashboard ([#23](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/issues/23)) ([f5d5f09](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/commit/f5d5f09e7197c25776d9b8be01108f78844054a4))
+
+
+### Bug Fixes
+
+* use dedicated prefixes for dependency updates ([#25](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/issues/25)) ([1415eb5](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/commit/1415eb5143df74ddb50fcb35f05eb97b95536baf))
+
 ## [1.2.0](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/compare/v1.1.0...v1.2.0) (2023-02-10)
 
 

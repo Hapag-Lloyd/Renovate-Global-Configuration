@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
 
       # yamllint disable-line rule:comments
-      - uses: streetsidesoftware/cspell-action@v2.19.0
+      - uses: streetsidesoftware/cspell-action@2b3e328526bdf4c2ed99a64e2eec534128d76b79 # v2.19.0
         with:
           config: .config/cspell.json

@@ -12,6 +12,7 @@ jobs:
     name: "ChatOps: /help"
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
 
       - name: Choose maintainer
@@ -21,6 +22,7 @@ jobs:
           echo "maintainer=$maintainer" >> "$GITHUB_OUTPUT"
 
       - name: Create comment
+        # yamllint disable-line rule:comments
         uses: actions/github-script@v6.4.0
         with:
           # yamllint disable rule:line-length

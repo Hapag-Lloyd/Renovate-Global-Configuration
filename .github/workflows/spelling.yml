@@ -1,5 +1,5 @@
 ---
-name: 'Check spelling'
+name: "Check spelling"
 
 # yamllint disable-line rule:truthy
 on:
@@ -9,8 +9,10 @@ jobs:
   cspell:
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:comments
       - uses: actions/checkout@v3.3.0
 
+      # yamllint disable-line rule:comments
       - uses: streetsidesoftware/cspell-action@v2.19.0
         with:
           config: .config/cspell.json

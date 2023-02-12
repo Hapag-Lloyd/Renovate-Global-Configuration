@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release
+        # yamllint disable-line rule:comments
         uses: google-github-actions/release-please-action@v3.7.3
         with:
           # to create protected tags

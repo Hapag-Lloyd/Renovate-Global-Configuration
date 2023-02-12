@@ -76,6 +76,15 @@ jobs:
         with:
           config_file_path: default.json
 
+  lint-shell:
+    name: Check shell scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.3.0
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@2.0.0
+
   lint-workflow:
     runs-on: ubuntu-latest
     continue-on-error: true

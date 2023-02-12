@@ -1,22 +1,28 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["cpus", "Hapag", "Repology"],
+  "words": ["cpus", "Hapag", "Infracost", "oidc", "Repology", "tflint", "tfsec"],
   "ignoreWords": [
     "amannn",
     "autodiscover",
     "Automerge",
-    "CODEOWNERS",
+    "codeowners",
+    "codeql",
     "datasource",
     "datasources",
     "Dockerfiles",
     "dorny",
     "ibiqlik",
+    "kayman",
+    "ludeeus",
     "markdownlint",
     "renovatebot",
     "rhysd",
+    "ruleset",
+    "sarif",
     "shuf",
     "shunsuke",
+    "signoff",
     "tflint"
   ]
 }

@@ -71,6 +71,11 @@ jobs:
 
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
 
+      # validates the default configuration included by all projects
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@v0.1.2
+        with:
+          config_file_path: default.json
+
   lint-shell:
     name: Check shell scripts
     runs-on: ubuntu-latest

@@ -3,13 +3,8 @@ name: Renovate
 
 # yamllint disable-line rule:truthy
 on:
-  pull_request:
   schedule:
     - cron: "37 0/6 * * *"
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   renovate:

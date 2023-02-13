@@ -9,7 +9,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  
+
 jobs:
   renovate:
     runs-on: ubuntu-latest

@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.1](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/compare/v1.3.0...v1.3.1) (2023-02-13)
+
+
+### Bug Fixes
+
+* use `GITHUB_TOKEN` for Renovate ([#31](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/issues/31)) ([c6650aa](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/commit/c6650aa02dca881da38713da46711a19ed78874f))
+* use Renovate as git author ([#29](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/issues/29)) ([c453b50](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/commit/c453b50d884e63ee08aa0aadb41f6df772b7cf2f))
+
+
+### Reverts
+
+* use `GITHUB_TOKEN` for Renovate ([#32](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/issues/32)) ([ebd8d5a](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/commit/ebd8d5a01db02027142df583988fe365dcf86ebc))
+
 ## [1.3.0](https://github.com/Hapag-Lloyd/Renovate-Global-Configuration/compare/v1.2.0...v1.3.0) (2023-02-12)
 
 

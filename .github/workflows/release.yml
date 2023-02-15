@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release
-        uses: google-github-actions/release-please-action@v3.7.3
+        # yamllint disable-line rule:comments
+        uses: google-github-actions/release-please-action@d3c71f9a0a55385580de793de58da057b3560862 # v3.7.4
         with:
           # to create protected tags
           token: ${{ secrets.RELEASE_PLEASE_GITHUB_TOKEN }}

@@ -1,7 +1,8 @@
 {
   "autodiscover": true,
   "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
-  "extends": ["config:base", ":semanticCommitTypeAll(chore)", "helpers:pinGitHubActionDigests"],
+  "extends": ["config:base", ":semanticCommits", "helpers:pinGitHubActionDigests", ":dependencyDashboard"],
+  "gitAuthor": "Renovate <info@hlag.com>",
   "includeForks": false,
   "ignorePaths": ["**/modules/**/provider.tf"],
   "labels": ["dependency"],

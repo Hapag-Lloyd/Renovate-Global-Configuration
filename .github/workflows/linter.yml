@@ -45,7 +45,7 @@ jobs:
     needs: find-changes
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
       - name: Run JSON Lint
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
@@ -57,7 +57,7 @@ jobs:
     needs: find-changes
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
       - name: Validate Markdown file
         run: |
@@ -71,7 +71,7 @@ jobs:
     needs: find-changes
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
       # yamllint disable-line rule:comments
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@7ab3d8f19305664925f3e626580f075f14e40386 # v0.1.2
@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
       - name: ShellCheck
         # yamllint disable-line rule:comments
@@ -103,7 +103,7 @@ jobs:
       options: --cpus 1 --user root
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
       - name: Validate Github workflows
         run: |
@@ -117,7 +117,7 @@ jobs:
     if: needs.find-changes.outputs.yaml == 'true'
     steps:
       # yamllint disable-line rule:comments
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
 
       - name: yaml-lint
         # yamllint disable-line rule:comments

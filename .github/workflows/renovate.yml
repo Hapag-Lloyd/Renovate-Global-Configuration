@@ -15,7 +15,7 @@ jobs:
 
       - name: Self-hosted Renovate
         # yamllint disable-line rule:comments
-        uses: renovatebot/github-action@299cbf941792d474b268c2c486505a04f632e89e # v34.138.3
+        uses: renovatebot/github-action@c56dbeca772b331ddf18eefad8b93f0f3c69d34a # v34.159.2
         with:
           configurationFile: default.json
           token: ${{ secrets.RENOVATE_TOKEN }}

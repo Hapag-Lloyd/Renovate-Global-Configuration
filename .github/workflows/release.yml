@@ -10,12 +10,20 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Release
-        # yamllint disable-line rule:comments
-        uses: google-github-actions/release-please-action@d3c71f9a0a55385580de793de58da057b3560862 # v3.7.4
+      - uses: actions/create-github-app-token@e995b4e40ace2eb5bf13137d9abe242c98f3aab6  # v1
+        id: app-token
         with:
-          # to create protected tags
-          token: ${{ secrets.RELEASE_PLEASE_GITHUB_TOKEN }}
-          release-type: simple
-          signoff: "Matthias Kay <matthias.kay@hlag.com>"
+          app-id: ${{ vars.GET_TOKEN_APP_ID }}
+          private-key: ${{ secrets.GET_TOKEN_APP_PRIVATE_KEY }}
+      # bootstrap-sha and release-as needs to be removed after first release
+      - name: Release
+        # yamllint disable-line rule:line-length
+        uses: google-github-actions/release-please-action@1ddb669c677d585663a83fc535edc428954c4aeb  # ratchet:google-github-actions/release-please-action@v3
+        with:
+          release-type: python
+          token: ${{ steps.app-token.outputs.token }}
+          pull-request-header: ''

@@ -1,0 +1,14 @@
+---
+name: PR commented
+
+# yamllint disable-line rule:truthy
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  default:
+    # yamllint disable-line rule:line-length
+    uses: Hapag-Lloyd/Repository-Templates/.github/workflows/default_slash_ops_comment_dispatch_callable.yml@3a102f6e2e5326bde1f4b3ad8b9b4354323aef41
+    secrets: inherit

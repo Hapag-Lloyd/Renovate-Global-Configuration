@@ -19,4 +19,4 @@ jobs:
       # a special check for the defaults
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
         with:
-          config-path: "default.json"
+          config_file_path: "default.json"

@@ -9,3 +9,14 @@ jobs:
   default:
     uses: Hapag-Lloyd/Repository-Templates/.github/workflows/default_linter_callable.yml@3a102f6e2e5326bde1f4b3ad8b9b4354323aef41
     secrets: inherit
+
+  lint-renovate-defaults:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      # a special check for the defaults
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
+        with:
+          config-path: "default.json"

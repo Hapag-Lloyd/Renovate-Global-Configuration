@@ -2,13 +2,13 @@
   "autodiscover": true,
   "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
   "extends": [
-    "config:base",
+    "config:recommended",
     ":semanticCommits",
     "helpers:pinGitHubActionDigests",
     ":dependencyDashboard"
   ],
   "gitAuthor": "Renovate <info@hlag.com>",
-  "includeForks": false,
+  "forkProcessing": "disabled",
   "ignorePaths": ["**/modules/**/provider.tf"],
   "labels": ["dependency"],
   "onboarding": false,
@@ -41,8 +41,9 @@
     }
   ],
 
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         "(^|/|\\.)Dockerfile$",
         "(^|/)Dockerfile[^/]*$",

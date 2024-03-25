@@ -17,6 +17,7 @@
     "automerge",
     "codeowners",
     "codeql",
+				"conventionalcommits",
     "datasource",
     "datasources",
     "Dockerfiles",

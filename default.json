@@ -1,9 +1,14 @@
 {
   "autodiscover": true,
   "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
-  "extends": ["config:base", ":semanticCommits", "helpers:pinGitHubActionDigests", ":dependencyDashboard"],
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    "helpers:pinGitHubActionDigests",
+    ":dependencyDashboard"
+  ],
   "gitAuthor": "Renovate <info@hlag.com>",
-  "includeForks": false,
+  "forkProcessing": "disabled",
   "ignorePaths": ["**/modules/**/provider.tf"],
   "labels": ["dependency"],
   "onboarding": false,
@@ -14,22 +19,31 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "minor"],
-      "automerge": true
+      "automerge": true,
+      "description": "All patch and minor updates are considered safe and will be automerged."
     },
     {
       "matchPackagePatterns": ["^software.amazon.*", "^com.amazonaws.*"],
       "groupName": "AWS packages",
-      "schedule": ["before 11:59am on monday"]
+      "schedule": ["before 11:59am on monday"],
+      "description": "There are too many updates to the AWS libraries. Do it once a week."
     },
     {
       "matchDatasources": ["repology"],
       "separateMajorMinor": false,
       "groupName": "repology packages"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchFileNames": [".github/workflows/*"],
+      "groupName": "GitHub Actions",
+      "description": "Group all github-actions packages together as actions use the same digest."
     }
   ],
 
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         "(^|/|\\.)Dockerfile$",
         "(^|/)Dockerfile[^/]*$",

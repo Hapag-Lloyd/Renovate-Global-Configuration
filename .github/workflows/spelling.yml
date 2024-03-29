@@ -6,13 +6,6 @@ on:
   pull_request:
 
 jobs:
-  cspell:
-    runs-on: ubuntu-latest
-    steps:
-      # yamllint disable-line rule:comments
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
-
-      # yamllint disable-line rule:comments
-      - uses: streetsidesoftware/cspell-action@ca4bb065dd09aca9c90c935f7dc9bb625985226c # v6.1.0
-        with:
-          config: .config/cspell.json
+  default:
+    uses: Hapag-Lloyd/Repository-Templates/.github/workflows/default_spelling_callable.yml@e87de55f19cc1e069426c42120094e7e2446dad4
+    secrets: inherit

@@ -8,22 +8,6 @@ on:
       - main
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/create-github-app-token@e8e39f73bb84fdf315a015fa3104f314c0a258b4  # v1
-        id: app-token
-        with:
-          app-id: ${{ vars.GET_TOKEN_APP_ID }}
-          private-key: ${{ secrets.GET_TOKEN_APP_PRIVATE_KEY }}
-      # bootstrap-sha and release-as needs to be removed after first release
-      - name: Release
-        # yamllint disable-line rule:line-length
-        uses: google-github-actions/release-please-action@a2d8d683f209466ee8c695cd994ae2cf08b1642d  # ratchet:google-github-actions/release-please-action@v3
-        with:
-          release-type: python
-          token: ${{ steps.app-token.outputs.token }}
-          pull-request-header: ''
+  default:
+    uses: Hapag-Lloyd/Repository-Templates/.github/workflows/default_release_callable.yml@e87de55f19cc1e069426c42120094e7e2446dad4
+    secrets: inherit

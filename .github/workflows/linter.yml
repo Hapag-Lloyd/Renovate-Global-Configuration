@@ -7,13 +7,13 @@ on:
 
 jobs:
   default:
-    uses: Hapag-Lloyd/Repository-Templates/.github/workflows/default_linter_callable.yml@aa06a3d8a580efc719d66bafdcb5d2ca6613cdea
+    uses: Hapag-Lloyd/Repository-Templates/.github/workflows/default_linter_callable.yml@1ae9a1d69c582281b4312e7ca65632adb32ddee8
     secrets: inherit
 
   lint-renovate-defaults:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+      - uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
 
       # a special check for the defaults
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1

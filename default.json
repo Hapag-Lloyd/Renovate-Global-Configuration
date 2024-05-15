@@ -57,5 +57,9 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
-  ]
+  ],
+
+  "tflint-plugin": {
+    "fileMatch": ["tflint\\.hcl$"]
+  }
 }

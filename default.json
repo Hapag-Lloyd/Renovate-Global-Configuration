@@ -40,7 +40,6 @@
       "description": "Group all github-actions packages together as actions use the same digest."
     },
     {
-      "matchDatasources": ["maven"],
       "matchDepTypes": ["test"],
       "semanticCommitType": "test",
       "description": "Use the `test` prefix for Maven test dependencies."

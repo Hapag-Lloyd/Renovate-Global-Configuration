@@ -1,0 +1,61 @@
+{
+  "autodiscover": true,
+  "autodiscoverFilter": ["/Hapag-Lloyd/*/"],
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    "helpers:pinGitHubActionDigests",
+    ":dependencyDashboard"
+  ],
+  "gitAuthor": "Renovate <info@hlag.com>",
+  "forkProcessing": "disabled",
+  "ignorePaths": ["**/modules/**/provider.tf"],
+  "labels": ["dependency"],
+  "onboarding": false,
+  "platform": "github",
+  "platformAutomerge": true,
+  "rebaseWhen": "behind-base-branch",
+
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "description": "All patch and minor updates are considered safe and will be automerged."
+    },
+    {
+      "matchPackagePatterns": ["^software.amazon.*", "^com.amazonaws.*"],
+      "groupName": "AWS packages",
+      "schedule": ["before 11:59am on monday"],
+      "description": "There are too many updates to the AWS libraries. Do it once a week."
+    },
+    {
+      "matchDatasources": ["repology"],
+      "separateMajorMinor": false,
+      "groupName": "repology packages"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchFileNames": [".github/workflows/*"],
+      "groupName": "GitHub Actions",
+      "description": "Group all github-actions packages together as actions use the same digest."
+    }
+  ],
+
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile[^/]*$",
+        "(^|/)terraform\\.yml$",
+        "(^|/)tflint\\.hcl$"
+      ],
+      "matchStrings": [
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*.+_version=\"(?<currentValue>.*)\"\\s*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*version = \"(?<currentValue>.*)\"\\s*"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
+}

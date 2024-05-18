@@ -38,16 +38,6 @@
       "matchFileNames": [".github/workflows/*"],
       "groupName": "GitHub Actions",
       "description": "Group all github-actions packages together as actions use the same digest."
-    },
-    {
-      "matchDepTypes": ["test"],
-      "semanticCommitType": "test",
-      "description": "Use the `test` prefix for Maven test dependencies."
-    },
-    {
-      "matchFileNames": [".github/workflows/*"],
-      "semanticCommitType": "ci",
-      "description": "Use the `ci` prefix for workflow dependencies."
     }
   ],
 

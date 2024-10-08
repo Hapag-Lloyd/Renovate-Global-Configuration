@@ -7,5 +7,5 @@ on: pull_request_target
 jobs:
   default:
     # yamllint disable-line rule:line-length
-    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_renovate_auto_approve_callable.yml@460c481578b6e60cacaf15c225a3c71a22fe5fca
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_renovate_auto_approve_callable.yml@c8901d1c75611531b7037946d884fd88e1da8e27
     secrets: inherit

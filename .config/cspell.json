@@ -6,6 +6,7 @@
     "Hapag",
     "Infracost",
     "oidc",
+    "projectlombok",
     "Repology",
     "shellcheck",
     "tflint",

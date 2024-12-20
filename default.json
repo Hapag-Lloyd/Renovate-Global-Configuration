@@ -66,6 +66,15 @@
         "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*version = \"(?<currentValue>.*)\"\\s*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+        {
+      "customType": "regex",
+      "fileMatch": ["^.pre-commit-config.yaml$"],
+      "matchStrings": [
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s+additional_dependencies: \\[\".*@(?<currentValue>.*)\"\\].*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s+rev: (?<currentValue>.*).*"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ],
 

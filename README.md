@@ -22,6 +22,7 @@ Make sure to include the default configuration in your `renovate.json` file.
 - try to auto-merge where possible (for patches and minor updates)
 - update AWS packages on mondays before noon only due to high frequency of updates
 - update all Repology packages in one PR. Especially useful for Alpine as all packages have to be updated at once.
+- update Pre-Commit plugins
 
 ## Special Version Updates
 

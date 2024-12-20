@@ -45,7 +45,21 @@
       "description": "Use the `test` prefix for Maven test dependencies."
     },
     {
-      "matchFileNames": [".github/workflows/*"],
+      "matchPackageNames": ["org.junit:junit-bom"],
+      "semanticCommitType": "test",
+      "description": "Test dependencies used in the dependencyManagement section are identified as production dependencies."
+    },
+    {
+      "matchPackageNames": [
+        "maven-wrapper",
+        "org.apache.maven.plugins:*",
+        "org.projectlombok:lombok"
+      ],
+      "semanticCommitType": "build",
+      "description": "Build dependencies not identified automatically."
+    },
+    {
+      "matchFileNames": [".github/workflows/*", ".release/*"],
       "semanticCommitType": "ci",
       "description": "Use the `ci` prefix for workflow dependencies."
     }

@@ -18,6 +18,7 @@
     "DOCKERHUB",
     "amannn",
     "aquasecurity",
+    "autodiscover",
     "automerge",
     "automerged",
     "buildcache",
@@ -39,6 +40,7 @@
     "ossrh",
     "pascalfrenz",
     "releaserc",
+    "renovatebot",
     "rhysd",
     "ruleset",
     "sarif",
@@ -47,6 +49,7 @@
     "shunsuke",
     "signoff",
     "temurin",
+    "tflint",
     "tfstate",
     "vuln"
   ]

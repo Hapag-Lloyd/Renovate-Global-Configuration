@@ -25,8 +25,8 @@
     {
       "matchPackagePatterns": ["^software.amazon.*", "^com.amazonaws.*"],
       "groupName": "AWS packages",
-      "schedule": ["before 11:59am on monday"],
-      "description": "There are too many updates to the AWS libraries. Do it once a week."
+      "schedule": ["* 3-7 * * 1"],
+      "description": "There are too many updates to the AWS libraries. Done on monday morning."
     },
     {
       "matchDatasources": ["repology"],
@@ -36,8 +36,10 @@
     {
       "matchManagers": ["github-actions"],
       "matchFileNames": [".github/workflows/*"],
+      "matchRepositories": ["!Hapag-Lloyd/Renovate-Global-Configuration"],
+      "schedule": ["* * 1 * "],
       "groupName": "GitHub Actions",
-      "description": "Group all github-actions packages together as actions use the same digest."
+      "description": "Group all github-actions packages together as actions use the same digest. Updates are done on the first day of the month. Excluding this global configuration repository."
     },
     {
       "matchDepTypes": ["test"],
@@ -45,7 +47,21 @@
       "description": "Use the `test` prefix for Maven test dependencies."
     },
     {
-      "matchFileNames": [".github/workflows/*"],
+      "matchPackageNames": ["org.junit:junit-bom"],
+      "semanticCommitType": "test",
+      "description": "Test dependencies used in the dependencyManagement section are identified as production dependencies."
+    },
+    {
+      "matchPackageNames": [
+        "maven-wrapper",
+        "org.apache.maven.plugins:*",
+        "org.projectlombok:lombok"
+      ],
+      "semanticCommitType": "build",
+      "description": "Build dependencies not identified automatically."
+    },
+    {
+      "matchFileNames": [".github/workflows/*", ".release/*"],
       "semanticCommitType": "ci",
       "description": "Use the `ci` prefix for workflow dependencies."
     }
@@ -62,12 +78,13 @@
       ],
       "matchStrings": [
         "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG .*?_VERSION=\"(?<currentValue>.*)\"\\s*",
         "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*.+_version=\"(?<currentValue>.*)\"\\s*",
         "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*version = \"(?<currentValue>.*)\"\\s*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     },
-        {
+    {
       "customType": "regex",
       "fileMatch": ["^.pre-commit-config.yaml$"],
       "matchStrings": [
@@ -75,10 +92,19 @@
         "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s+rev: (?<currentValue>.*).*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [".tf$"],
+      "matchStrings": [
+        "\\s*# renovate: amiFilter=(?<packageName>.*?)\n(.*currentImageName=(?<currentDigest>.*?)\n)?(.*\n)?.*?(?<depName>[a-zA-Z0-9-_:]*)[ ]*?[:|=][ ]*?[\"|']?(?<currentValue>ami-[a-z0-9]{17})[\"|']?.*"
+      ],
+      "datasourceTemplate": "aws-machine-image",
+      "versioningTemplate": "aws-machine-image"
     }
   ],
 
   "tflint-plugin": {
-    "fileMatch": ["tflint\\.hcl$"]
+    "fileMatch": ["^.config/tflint\\.hcl$"]
   }
 }

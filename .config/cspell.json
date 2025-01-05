@@ -8,6 +8,7 @@
     "javadoc",
     "javadocs",
     "oidc",
+    "projectlombok",
     "Repology",
     "sonatype",
     "tflint",

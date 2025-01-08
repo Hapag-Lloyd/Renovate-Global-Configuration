@@ -24,6 +24,7 @@ Make sure to include the default configuration in your `renovate.json` file.
 - update all Repology packages in one PR. Especially useful for Alpine as all packages have to be updated at once.
 - allow updates of AMI images
 - update dependant project workflows on the 1st of every month to reduce the number of PRs
+- update Pre-Commit plugins
 
 ## Special Version Updates
 

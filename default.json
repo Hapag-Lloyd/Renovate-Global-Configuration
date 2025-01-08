@@ -37,7 +37,7 @@
       "matchManagers": ["github-actions"],
       "matchFileNames": [".github/workflows/*"],
       "matchRepositories": ["!Hapag-Lloyd/Renovate-Global-Configuration"],
-      "schedule": ["* * 1 * "],
+      "schedule": ["* * 1 * *"],
       "groupName": "GitHub Actions",
       "description": "Group all github-actions packages together as actions use the same digest. Updates are done on the first day of the month. Excluding this global configuration repository."
     },

@@ -106,7 +106,7 @@
       "customType": "regex",
       "fileMatch": ["^.github/workflows/*.yml$"],
       "matchStrings": [
-        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*version: \"(?<currentValue>.*)\"\\s*",
+        "\\s*# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*version: \"(?<currentValue>.*)\"\\s*"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }

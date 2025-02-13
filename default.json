@@ -34,12 +34,11 @@
       "groupName": "repology packages"
     },
     {
-      "matchManagers": ["github-actions"],
-      "matchFileNames": [".github/workflows/*"],
-      "matchRepositories": ["!Hapag-Lloyd/Renovate-Global-Configuration"],
+      "matchFileNames": [".github/workflows/**"],
+      "matchRepositories": ["!Hapag-Lloyd/Workflow-Templates"],
       "schedule": ["* * 1 * *"],
       "groupName": "GitHub Actions",
-      "description": "Group all github-actions packages together as actions use the same digest. Updates are done on the first day of the month. Excluding this global configuration repository."
+      "description": "Group all workflow updates together as all actions use the same digest. Updates are done on the first day of the month. But we want to have all updates immediately when they occur in the base repository."
     },
     {
       "matchDepTypes": ["test"],
@@ -61,7 +60,7 @@
       "description": "Build dependencies not identified automatically."
     },
     {
-      "matchFileNames": [".github/workflows/*", ".release/*"],
+      "matchFileNames": [".github/workflows/**", ".release/**"],
       "semanticCommitType": "ci",
       "description": "Use the `ci` prefix for workflow dependencies."
     }

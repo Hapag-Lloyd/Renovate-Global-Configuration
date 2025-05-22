@@ -11,15 +11,6 @@
     "**/*.tfstate.*",
     "**/node_modules/**"
   ],
-  "dictionaries": [
-    "workflow",
-    "maven",
-    "python",
-    "docker",
-    "simple",
-    "terraform-module",
-    "project"
-  ],
   "dictionaryDefinitions": [
     {
       "name": "workflow",

@@ -1,0 +1,6 @@
+autodiscover
+automerged
+kayman
+pascalfrenz
+projectlombok
+repology
